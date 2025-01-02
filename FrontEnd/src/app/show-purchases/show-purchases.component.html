@@ -1,0 +1,81 @@
+<style>
+    .gradient-custom {
+        /* fallback for old browsers */
+        background: #6a11cb;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+    }
+    .thead{
+        font-weight: bold;
+    }
+</style>
+<div class="container py-5">
+    <div class="card mb-4">
+        <div class="card-header py-3">
+            <h5 class="mb-0"> Basket Details </h5>
+        </div>
+        <div class="card-body">
+            <div class="container" id="content" #content>
+            <table class="table table-striped table-hover " >
+                <thead>
+                    <th>
+                       Id
+                    </th>
+
+                    <th>
+                        Course Id
+                    </th>
+                    <th>
+                        Course Title
+                    </th>
+                    <th>
+                       Status
+                    </th>
+
+                    <th>
+                        Price
+                    </th>
+
+                    <th>
+                        Purchase Date
+                    </th>
+
+
+
+                </thead>
+                <tr *ngFor="let item of  Purchases">
+                    <td>
+                        {{item.id}}
+                    </td>
+
+                    <td>
+                        {{item.course.courseId}}
+                    </td>
+                    <td>
+                        {{item.course.courseTitle}}
+                    </td>
+                    <td>
+                        {{item.status}}
+                    </td>
+
+                    <td>
+                        {{item.prix}}
+                    </td>
+
+                    <td>
+                        {{item.date_purchase}}
+                    </td>
+
+
+
+                </tr>
+            </table>
+            <input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()"> 
+
+        </div>
+    </div>
+</div>
